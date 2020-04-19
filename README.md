@@ -27,5 +27,9 @@ Don't forget to register an App within Azure AD and give it Microsoft Graph API 
 
 Also uses Client Secret only to connect. No Certificate. 
 
+The output files;
+In the output directory the final combined mail rules are called MailRuleList with the date and hour/minute appened to the name. All the files called RuleList=********.json the output from each worker thread. I left them in as I just created this code and wanted to leave in for troubleshooting reasons for a few weeks while it runs. The UserList.json file is the list of all users within Azure that feeds the worker threads when getting the mail rules.
+
+
 That's all I can think of right now. Any questions just ask me.
 
