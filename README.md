@@ -1,2 +1,26 @@
 # o365mailrules
+
 Using Microsoft Graph API to pull all users mail rules
+
+Created with Python 3.7.4. Defintiley won't work with 3.6. Not tested below 3.7.4.
+
+Requires "requests" and "cryptography"
+
+Don't forget to change the folder locations in conf.ini to handle windows or linux.
+
+I'm fully aware I only obfuscated the client secret stored stored in the "keyFile". I just didn't want it to be in plaintext and I wanted to mess around with the "cryptograph" libary. After the Python Scripts first run it will encode the passwords under the [keys] section based on the "fileKey" in the conf.ini and a salt in the script. 
+
+I forget if you need to pre create the "outputDir" and the "LogDir"
+
+There is NO builtin cleanup out outputted files.
+
+The script is hardcdoed set to run 36 threads and "20" queries per a batch API call to Microsoft Graph. That is the max queries that can be added to a single batch. I'll get around to making it a setting in the conf.ini. With just over 37,000 users it didn't not hit the Graph API limits of 10,000 queries per 10 minutes. I belive that is the limit for Outlook queries. this is doing Mail Rules so i'm guessing that would apply.
+
+very little exception handling. That is always the last to thing be added isn't it?
+
+Don't forget to register an App within Azure AD and give it Microsoft Graph API rights. Should just need Directory.Read.All, MailboxSettings.Read, User.Read.All.
+
+Also uses Client Secret only to connect. No Certificate. 
+
+That's all I can think of right now. Any questions just ask me.
+
