@@ -7,6 +7,7 @@ FYI: I'm not a developer by trade :) so feedback is always welcome if you see ug
 Note this only pulls all mail rules (which can be a forward rule). Not the global mail forwarding setting. as of 4/19/2020 There doesn't appear to be a way to pull those via the MS Graph API. So you have to use powershell still. Pulling Global foward setting via powershell is fast where Mail rules takes forever. This script takes about 7 minutes for just over 37,000 users. Granted many of those don't have mail rules (but that actually slows the API call down)
 
 Created with Python 3.7.4. Definitely  won't work with 3.6. Not tested below 3.7.4.
+Coded up on Windows and runs on Linux for my reasons.
 
 Requires "requests" and "cryptography"
 
